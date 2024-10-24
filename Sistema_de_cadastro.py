@@ -1,5 +1,5 @@
 import os
-import time  # Importa a biblioteca time
+import time  
 
 # lista com as bandas cadastradas
 lista = [
@@ -53,11 +53,11 @@ def escolha():  # Função para escolher a opção do menu
             listar_intervalo()
         elif escolha == 0:
             print("Saindo do sistema")
-            time.sleep(1)  # Pausa antes de sair
+            time.sleep(1)  
             exit()
         else:
             print("Opção inválida")
-            time.sleep(1)  # Pausa para o usuário ler a mensagem
+            time.sleep(1)  
     except ValueError:
         print("Erro: Por favor, insira valores válidos.")
         time.sleep(1)  # Pausa após um erro
@@ -106,46 +106,46 @@ def buscar():  # Função para buscar uma banda baseada em suas especificações
             termo = input("Digite o Nome da banda a ser procurada: ")
             for i in range(len(lista)):
                 if termo in lista[i]['nome']:
-                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
+                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas em milhões: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
                     time.sleep(1)  # Pausa após exibir a banda encontrada
 
         elif busca == 2:
             termo = input("Digite o nome do integrante a ser procurado: ")
             for i in range(len(lista)):
                 if termo in lista[i]['integrantes']:
-                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
+                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas em milhões: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
                     time.sleep(1)
 
         elif busca == 3:
             termo = input("Digite a quantidade de álbuns a ser procurada: ")
             for i in range(len(lista)):
                 if int(termo) == lista[i]['albuns']:
-                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
+                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas em milhões: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
                     time.sleep(1)
 
         elif busca == 4:
             termo = input("Digite a quantidade de álbuns vendidos a ser procurada: ")
             for i in range(len(lista)):
-                if float(termo) == lista[i]['vendas']:  # Corrigi aqui para comparar com float
-                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
+                if float(termo) == lista[i]['vendas']: 
+                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas em milhões: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
                     time.sleep(1)
 
         elif busca == 5:
             termo = input("Digite o Ano de formação da banda a ser procurado: ")
             for i in range(len(lista)):
                 if int(termo) == lista[i]['ano']:
-                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
+                    print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas em milhões: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}")
                     time.sleep(1)
         else:
             print("Opção inválida.") 
             time.sleep(1)  # Pausa após um erro
     except ValueError: 
         print("Erro: Por favor, insira valores válidos")    
-        time.sleep(1)  # Pausa após um erro
+        time.sleep(1)  
 
 def verificar_tudo():  # Função para imprimir todas as bandas cadastradas
     for i in range(len(lista)):
-        print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}\n")
+        print(f"Nome: {lista[i]['nome']}\nIntegrantes: {lista[i]['integrantes']}\nÁlbuns: {lista[i]['albuns']}\nVendas em milhões: {lista[i]['vendas']}\nAno de formação: {lista[i]['ano']}\n")
         time.sleep(0.5)  # Pausa após exibir cada banda
 
 def remover():  # Função para remover uma banda
@@ -154,11 +154,11 @@ def remover():  # Função para remover uma banda
         if remove == lista[i]['nome']:
             del lista[i]
             print("Banda removida com sucesso\nLista atualizada")
-            time.sleep(1)  # Pausa após remover
+            time.sleep(1)  
             break
     else:
         print("Banda não encontrada")
-        time.sleep(1)  # Pausa após não encontrar
+        time.sleep(1)  
 
 def edit():  # Função para editar as características da banda
     edit = input("Digite o nome da banda a ser editada: ")
@@ -196,7 +196,7 @@ def edit():  # Função para editar as características da banda
                     time.sleep(1)
             except ValueError:
                 print("Erro: Por favor, digite valores válidos. ")
-                time.sleep(1)  # Pausa após um erro
+                time.sleep(1)  
 
 def verificar_vendas():  # Função para verificar o número de vendas
     maior = 0
@@ -208,8 +208,8 @@ def verificar_vendas():  # Função para verificar o número de vendas
             maior = vendas
             banda_maior = lista[i]['nome']
 
-    print(f"A banda com maior número de vendas é: {banda_maior} com {maior} álbuns vendidos")
-    time.sleep(2)  # Pausa para que o usuário leia a mensagem
+    print(f"A banda com maior número de vendas é: {banda_maior} com {maior} milhões de álbuns vendidos")
+    time.sleep(2) 
 
 def banda_antiga():  # Função para verificar a banda mais antiga
     ano = lista[0]['ano']  
@@ -235,7 +235,7 @@ def banda_recente():  # Função para verificar a banda mais recente
             banda_mais_recente = lista[i]['nome']
 
     print(f"A banda mais recente é {banda_mais_recente}, formada no ano de {ano}")
-    time.sleep(2)  # Pausa para que o usuário leia a mensagem
+    time.sleep(2)  
 
 def listar_intervalo():  # Função para listar um intervalo de índices
     try:
@@ -250,7 +250,7 @@ def listar_intervalo():  # Função para listar um intervalo de índices
                 time.sleep(1)  # Pausa após exibir cada banda
     except ValueError:
         print("Erro: Por favor, digite valores válidos.")
-        time.sleep(1)  # Pausa após erro
+        time.sleep(1)  
 
 
 while True:
